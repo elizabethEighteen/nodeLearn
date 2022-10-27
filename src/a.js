@@ -6,7 +6,7 @@ const app = express();
 // 设置`cookie`
 
 app.get("/login", (req, res) => {
-  res.cookie("user", "jay", { maxAge: 2000000, httpOnly: true });
+  res.cookie("user1", "jay", { maxAge: 2000000, httpOnly: true,domain:'localhost' });
   res.json({ code: 0, message: "登录成功" });
 });
 
