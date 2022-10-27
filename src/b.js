@@ -4,7 +4,7 @@ const app = express();
 
 app.all("*", (req, res, next) => {
   res.header("Access-Control-Allow-Origin", "http://localhost:9000");
-//   res.header("Access-Control-Allow-Credentials", "true"); // ++ 新增
+  res.header("Access-Control-Allow-Credentials", "true"); // ++ 新增
   next();
 });
 
@@ -15,7 +15,7 @@ app.get("/anotherService", (req, res) => {
     res.json({ code: 0, msg: "这是8003端口返回的" });
     
 });
-
+app.use("/stb", express.static("./staticb"));
 
 app.listen("9003", () => {
   console.log("app2 running at port 9003");
